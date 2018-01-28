@@ -1,0 +1,60 @@
+Module Module1
+
+    Sub Main()
+        Dim mName As String = ""
+        Dim ID As Integer = 0
+        Dim IfFound As Boolean
+        Dim sName As String = ""
+        Dim ChooseOpt As Char = ""
+        Dim NewName As String = ""
+        Dim NewID As Integer = 0
+        IfFound = False
+        FileOpen(1, "C:\Practice\MembershipDetails.txt", OpenMode.Input)
+        Console.WriteLine(" Press y to check exisiting details ")
+        ChooseOpt = Console.ReadLine
+        If ChooseOpt = "y" Then
+
+
+            Console.WriteLine("Enter Member Name : ")
+
+            sName = Console.ReadLine
+
+
+
+            While EOF(1) = False And IfFound = False
+                Input(1, ID)
+                Input(1, mName)
+
+                If UCase(sName) = mName Or LCase(sName) = mName Then
+
+                    Console.WriteLine("Member ID :" & ID)
+                    IfFound = True
+                End If
+
+
+
+            End While
+            FileClose(1)
+            If IfFound = False Then
+                Console.WriteLine("ID not found")
+
+            End If
+            FileOpen(2, "C:\Practice\MembershipDetails.txt", OpenMode.Append)
+
+        Else
+            Console.WriteLine("Name of new member?")
+            NewName = Console.ReadLine
+            Console.WriteLine("ID OF NEW MEMBER?")
+            NewID = Console.ReadLine
+            WriteLine(2, NewName)
+            WriteLine(2, NewID)
+        End If
+
+
+
+
+
+        Console.ReadKey()
+    End Sub
+
+End Module
