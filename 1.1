@@ -1,0 +1,33 @@
+Module Module1
+
+    Sub Main()
+        Dim name As String
+        Dim memberID, PrevID As Integer
+        Dim sContinue, NotContinue As Char
+        sContinue = "y"
+        NotContinue = "n"
+        name = ""
+        memberID = 0
+        PrevID = 0
+        FileOpen(1, "C:\Practice\MembershipDetails.txt", OpenMode.Output)
+        Do
+            Console.WriteLine("Enter Member Name")
+            name = Console.ReadLine
+            Console.WriteLine("Enter Membership ID")
+            memberID = Console.ReadLine
+            If memberID > PrevID Then
+                WriteLine(1, memberID)
+                WriteLine(1, name)
+            Else
+                Console.WriteLine("Member ID not availible")
+            End If
+            Console.WriteLine("Do you want to add more members?")
+            sContinue = Console.ReadLine
+            memberID = PrevID
+        Loop Until sContinue = NotContinue
+        FileClose(1)
+        Console.ReadKey()
+
+    End Sub
+
+End Module
