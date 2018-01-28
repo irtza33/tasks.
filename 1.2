@@ -1,0 +1,18 @@
+Module Module1
+
+    Sub Main()
+        Dim sName As String = ""
+        Dim ID As Integer = 0
+        FileOpen(1, "C:\Practice\MembershipDetails.txt", OpenMode.Input)
+        While EOF(1) = False
+            Input(1, ID)
+            Input(1, sName)
+            Console.WriteLine(ID)
+            Console.WriteLine(sName)
+        End While
+        FileClose(1)
+        Console.ReadKey()
+
+    End Sub
+
+End Module
