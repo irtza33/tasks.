@@ -1,0 +1,28 @@
+Module Module1
+
+    Sub Main()
+        Dim mName As String = ""
+        Dim ID As Integer = 0
+        Dim tNumber As String = ""
+        Dim mDate As Date
+        FileOpen(1, "C:\Practice\MembershipDetails.txt", OpenMode.Input)
+        FileOpen(2, "C:\practice\NewDetails.txt", OpenMode.Append)
+        While EOF(1) = False
+            Input(1, ID)
+            Input(1, mName)
+            Console.WriteLine("Enter Member Telephone number")
+            tNumber = Console.ReadLine
+            Console.WriteLine("Enter Date of Membership start")
+            mDate = Console.ReadLine
+            WriteLine(2, ID)
+            WriteLine(2, mName)
+            WriteLine(2, tNumber)
+            WriteLine(2, mDate)
+        End While
+        FileClose(1)
+        FileClose(2)
+        Console.ReadKey()
+
+    End Sub
+
+End Module
